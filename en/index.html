@@ -321,12 +321,22 @@
   .doc-links a:hover{ text-decoration:underline; }
 
   /* location */
-  .place-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
-  .place{
-    background:var(--card-bg); border:1px solid var(--line); border-radius:3px; padding:18px 16px;
-    font-family:var(--font-display); font-size:0.85rem; letter-spacing:0.01em; font-weight:700;
-    display:flex; align-items:center; min-height:74px;
+  .place-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  .place-card{
+    background:var(--card-bg); border:1px solid var(--line); border-radius:4px; overflow:hidden;
+    box-shadow:var(--shadow); display:flex; flex-direction:column;
   }
+  .place-card img{ width:100%; height:120px; object-fit:cover; display:block; }
+  .place-icon{ width:100%; height:120px; display:flex; align-items:center; justify-content:center; background:var(--surface-alt); }
+  .place-icon svg{ width:34px; height:34px; color:var(--accent-strong); }
+  .place-body{ padding:12px 14px 14px; }
+  .place-body h3{
+    font-family:var(--font-display); font-size:0.82rem; text-transform:none; letter-spacing:0.01em;
+    font-weight:700; margin:0; text-wrap:initial;
+  }
+  .place-body span{ display:block; font-family:var(--font-body); font-size:0.78rem; color:var(--text-soft); margin-top:4px; }
+  .place-credit{ font-size:0.72rem; color:var(--text-soft); opacity:0.7; margin-top:16px; }
+  .place-credit a{ color:inherit; }
   .map-embed{ position:relative; width:100%; aspect-ratio:21/9; border-radius:4px; overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow); margin-top:24px; }
   .map-embed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
   .map-link{ margin-top:14px; display:inline-flex; align-items:center; gap:8px; font-family:var(--font-display); font-size:0.82rem; font-weight:700; text-decoration:none; color:var(--coral-500); }
@@ -699,19 +709,70 @@
       <p>Set within the city's natural landscape, with easy access to Antalya's landmark spots.</p>
     </div>
     <div class="place-grid">
-      <div class="place">Konyaaltı Plajı</div>
-      <div class="place">Lara Sahili</div>
-      <div class="place">Kaleiçi Old Town</div>
-      <div class="place">Düden Waterfalls</div>
-      <div class="place">Aspendos Ancient City</div>
-      <div class="place">Antalya Marina</div>
-      <div class="place">Cam Piramit</div>
-      <div class="place">Antalya Museum</div>
+      <div class="place-card">
+        <img src="assets/gallery/konyaalti-plaji.jpg" loading="lazy" alt="Konyaaltı Beach">
+        <div class="place-body">
+          <h3>Konyaaltı Beach</h3>
+          <span>The city's iconic pebble beach</span>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 22c4-2 16-2 20 0"/><path d="M12 22c0-8-4-13-8-15 6 0 11 6 11 15"/><path d="M12 22c0-8 4-13 8-15"/></svg>
+        </div>
+        <div class="place-body">
+          <h3>Lara Beach</h3>
+          <span>Long sandy shore and beach clubs</span>
+        </div>
+      </div>
+      <div class="place-card">
+        <img src="assets/gallery/kaleici.jpg" loading="lazy" alt="Kaleiçi old town">
+        <div class="place-body">
+          <h3>Kaleiçi Old Town</h3>
+          <span>Historic harbor and narrow streets</span>
+        </div>
+      </div>
+      <div class="place-card">
+        <img src="assets/gallery/duden-selalesi.jpg" loading="lazy" alt="Düden Waterfalls">
+        <div class="place-body">
+          <h3>Düden Waterfalls</h3>
+          <span>A dramatic waterfall dropping into the sea</span>
+        </div>
+      </div>
+      <div class="place-card">
+        <img src="assets/gallery/aspendos.jpg" loading="lazy" alt="Aspendos Roman theatre">
+        <div class="place-body">
+          <h3>Aspendos Ancient City</h3>
+          <span>A 2nd-century Roman theatre</span>
+        </div>
+      </div>
+      <div class="place-card">
+        <img src="assets/gallery/antalya-marina.jpg" loading="lazy" alt="Antalya Marina, historic harbor">
+        <div class="place-body">
+          <h3>Antalya Marina</h3>
+          <span>Yachts and a historic harbor view</span>
+        </div>
+      </div>
+      <div class="place-card">
+        <img src="assets/gallery/cam-piramit.jpg" loading="lazy" alt="Glass Pyramid congress center">
+        <div class="place-body">
+          <h3>Glass Pyramid</h3>
+          <span>The city's landmark congress center</span>
+        </div>
+      </div>
+      <div class="place-card">
+        <img src="assets/gallery/antalya-akvaryum.jpg" loading="lazy" alt="Antalya Aquarium">
+        <div class="place-body">
+          <h3>Antalya Aquarium</h3>
+          <span>One of the world's longest tunnel aquariums</span>
+        </div>
+      </div>
     </div>
     <div class="map-embed">
       <iframe src="https://www.google.com/maps?q=36.9433482,30.6355731&z=15&output=embed" title="Sur Yapı Tatil Evleri location map" loading="lazy" allowfullscreen></iframe>
     </div>
     <a class="map-link" href="https://maps.app.goo.gl/YFf4grRkdvJG7QDc8" target="_blank" rel="noopener">View Sur Yapı Tatil Evleri on Google Maps →</a>
+    <p class="place-credit">Photos: Wikimedia Commons — <a href="https://commons.wikimedia.org/wiki/File:View_of_Konyaalt%C4%B1_Beach_and_Beyda%C4%9Flar%C4%B1_Mountains,_Antalya.jpg" target="_blank" rel="noopener">FingerWiki</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Antalya_-_Kalei%C3%A7i.JPG" target="_blank" rel="noopener">Dat doris</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Lower_Duden_Falls.jpg" target="_blank" rel="noopener">Saffron Blaze</a> (CC BY 3.0), <a href="https://commons.wikimedia.org/wiki/File:Theatre_Aspendos.jpg" target="_blank" rel="noopener">negroni f</a> (CC BY-SA 3.0), <a href="https://commons.wikimedia.org/wiki/File:Roman_Harbour_of_Antalya_-_2014.10_-_panoramio_(1).jpg" target="_blank" rel="noopener">rheins</a> (CC BY 3.0), <a href="https://commons.wikimedia.org/wiki/File:Cam_Piramit_-_23.6.15.JPG" target="_blank" rel="noopener">Onur</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Antalya_Aquarium.jpg" target="_blank" rel="noopener">МаратД</a> (CC BY-SA 4.0).</p>
   </div>
 </section>
 

@@ -357,9 +357,23 @@
   .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
   .contact-info h2{ font-size:clamp(1.7rem,3.4vw,2.5rem); }
   .contact-info p{ color:var(--text-soft); margin-top:16px; font-family:var(--font-body); }
-  .contact-methods{ margin-top:28px; display:flex; flex-direction:column; gap:14px; }
-  .contact-methods a{ text-decoration:none; font-family:var(--font-display); font-size:0.92rem; font-weight:700; display:flex; align-items:center; gap:10px; }
-  .contact-methods small{ display:block; font-family:var(--font-body); font-weight:400; color:var(--text-soft); font-size:0.82rem; margin-top:2px; }
+  .contact-methods{ margin-top:28px; display:flex; flex-direction:column; gap:20px; }
+  .contact-primary{
+    text-decoration:none; display:flex; align-items:center; gap:14px;
+    background:var(--accent); color:var(--surface-dark); padding:16px 20px; border-radius:6px;
+  }
+  .contact-primary .ico{ width:28px; height:28px; flex:none; }
+  .contact-primary b{ display:block; font-family:var(--font-display); font-size:0.98rem; font-weight:800; }
+  .contact-primary small{ display:block; font-family:var(--font-body); font-weight:400; font-size:0.82rem; margin-top:2px; opacity:0.85; }
+  .contact-secondary-label{
+    font-family:var(--font-display); font-size:0.66rem; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--text-on-dark-soft); opacity:0.65;
+  }
+  .contact-secondary{ display:flex; flex-direction:column; gap:14px; margin-top:10px; padding-top:16px; border-top:1px solid var(--line-on-dark); }
+  .contact-secondary a{ text-decoration:none; display:flex; align-items:center; gap:12px; color:var(--text-on-dark); }
+  .contact-secondary .ico{ width:20px; height:20px; flex:none; color:var(--text-on-dark-soft); }
+  .contact-secondary b{ display:block; font-family:var(--font-display); font-size:0.88rem; font-weight:700; }
+  .contact-secondary small{ display:block; font-family:var(--font-body); font-weight:400; color:var(--text-on-dark-soft); font-size:0.8rem; margin-top:2px; }
 
   form.request{ background:var(--card-bg); border:1px solid var(--line); border-radius:4px; padding:32px; box-shadow:var(--shadow); }
   .field{ margin-bottom:18px; display:flex; flex-direction:column; gap:6px; }
@@ -813,18 +827,30 @@
       <h2 style="color:var(--text-on-dark)">Ask about availability now</h2>
       <p style="color:var(--text-on-dark-soft)">Fill out the form or message us directly on WhatsApp — we'll get back to you the same day.</p>
       <div class="contact-methods">
-        <a id="waLink" href="#" target="_blank" rel="noopener" style="color:var(--accent)">
-          WhatsApp
-          <small>+90 537 499 27 01</small>
+        <a id="waLink" class="contact-primary" href="#" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 8.7c.3-.7 1-.6 1.4 0 .3.5.8 1.3.5 1.8-.2.4-.7.6-.9.9-.2.3 0 .7.5 1.3.6.8 1.4 1.3 2.2 1.6.4.1.6 0 .9-.3.3-.3.6-.7 1-.6.4.1 1.4.6 1.7.9.2.3.2.6 0 1-.3.6-1.2 1-1.9 1-1 0-2.4-.5-3.9-1.7-1.7-1.3-2.7-2.9-3-3.9-.2-.6-.1-1.4.5-2Z"/></svg>
+          <span>
+            <b>Message us on WhatsApp</b>
+            <small>+90 537 499 27 01 · Fastest response here</small>
+          </span>
         </a>
-        <a href="mailto:info@devremulkkiralama.com" style="color:var(--text-on-dark)">
-          info@devremulkkiralama.com
-          <small>General inquiries and period requests</small>
-        </a>
-        <a href="https://www.facebook.com/groups/973951725433397" target="_blank" rel="noopener" style="color:var(--text-on-dark)">
-          <span>Our Facebook Group</span>
-          <small>Join our timeshare rental, sale &amp; exchange community</small>
-        </a>
+        <div class="contact-secondary">
+          <span class="contact-secondary-label">Other channels</span>
+          <a href="mailto:info@devremulkkiralama.com">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg>
+            <span>
+              <b>info@devremulkkiralama.com</b>
+              <small>General inquiries and period requests</small>
+            </span>
+          </a>
+          <a href="https://www.facebook.com/groups/973951725433397" target="_blank" rel="noopener">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="2.6"/><path d="M3.5 19c.8-3 3-4.6 5.5-4.6s4.7 1.6 5.5 4.6"/><circle cx="17" cy="9" r="2"/><path d="M15.5 19c.4-2 1.6-3.4 3-3.8"/></svg>
+            <span>
+              <b>Our Facebook Group</b>
+              <small>Timeshare rental, sale &amp; exchange community</small>
+            </span>
+          </a>
+        </div>
       </div>
     </div>
     <form class="request" id="requestForm">
